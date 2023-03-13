@@ -6,12 +6,17 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 20:26:55 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/10 20:33:34 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:47:43 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../includes/push_swap.h"
 
+/*
+** Trie la pile en utilisant une version modifiée de l'algorithme de tri par fusion.
+** La pile est divisée en groupes et chaque groupe est trié à l'aide de l'algorithme de tri par insertion.
+** Les groupes triés sont ensuite fusionnés en utilisant une variante de l'algorithme de fusion.
+*/
 void	sort_large(t_stack *a, t_stack *b)
 {
 	int	group_size;
@@ -63,5 +68,6 @@ void	sort_fifty(t_stack *a, t_stack *b)
 		push_max_to_b(a, b);
 		i++;
 	}
-	push_all_to_a(a, b);
+	push_to_a(a, b);
 }
+

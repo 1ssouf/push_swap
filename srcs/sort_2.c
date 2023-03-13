@@ -6,11 +6,11 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 20:31:24 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/10 20:33:29 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:47:46 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sort_two(t_stack *stack)
 {
@@ -95,15 +95,12 @@ void	sort_five(t_stack *a, t_stack *b)
 
 void	sort_ten(t_stack *a, t_stack *b)
 {
-	int	i;
 	int	chunk_size;
 
-	chunk_size = a->size / 10;
-	i = 0;
-	while (i < 10)
-	{
-		push_chunk_to_b(a, b, chunk_size, get_chunk_max(a, chunk_size));
-		i++;
-	}
-	push_all_to_a(a, b);
+	chunk_size = a->size / 2;
+	push_chunk_to_b(a, b, chunk_size, get_chunk_max(a, chunk_size));
+	push_all_to_a(a, b, chunk_size);
+	push_chunk_to_b(a, b, chunk_size, get_chunk_max(a, chunk_size));
+	push_all_to_a(a, b, chunk_size);
 }
+

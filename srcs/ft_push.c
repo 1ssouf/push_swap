@@ -6,11 +6,11 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:18:22 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/01 18:29:29 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:47:16 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_push(t_stack *src, t_stack *dest)
 {
@@ -41,5 +41,5 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
         stack_b->top++;
         stack_b->data[stack_b->top] = stack_a->data[stack_a->top];
         stack_a->top--;
-    }
+    }           
 }

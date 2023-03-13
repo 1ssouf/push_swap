@@ -6,11 +6,11 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:17:29 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/10 20:24:17 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:47:23 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_rotate(t_stack *stack)
 {

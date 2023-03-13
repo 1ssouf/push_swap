@@ -6,11 +6,11 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:25:01 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/09 19:09:30 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:47:36 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_atoi(char *str)
 {
@@ -120,3 +120,4 @@ void	ft_putstr_fd(char *s, int fd)
 		}
 	}
 }
+
