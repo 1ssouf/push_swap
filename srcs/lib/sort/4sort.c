@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_1.c                                           :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 20:26:55 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/13 21:47:43 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/15 18:11:28 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 /*
-** Trie la pile en utilisant une version modifiée de l'algorithme de tri par fusion.
-** La pile est divisée en groupes et chaque groupe est trié à l'aide de l'algorithme de tri par insertion.
-** Les groupes triés sont ensuite fusionnés en utilisant une variante de l'algorithme de fusion.
+** Trie la pile en utilisant une version modifiée de l'algorithme de tri
+** par fusion. La pile est divisée en groupes et chaque groupe est trié 
+** à l'aide de l'algorithme de tri par insertion. Les groupes triés sont 
+** ensuite fusionnés en utilisant une variante de l'algorithme de fusion.
 */
 void	sort_large(t_stack *a, t_stack *b)
 {
@@ -70,4 +71,3 @@ void	sort_fifty(t_stack *a, t_stack *b)
 	}
 	push_to_a(a, b);
 }
-

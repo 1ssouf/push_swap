@@ -6,7 +6,7 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:38:52 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/13 21:47:56 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:59:49 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,19 +79,4 @@ int	get_group_size(int size)
 int	get_num_groups(int size, int group_size)
 {
 	return ((size + group_size - 1) / group_size);
-}
-
-void	push_to_b(t_stack *a, t_stack *b, int group_size, int group_num)
-{
-	int	i;
-
-	i = 0;
-	while (i < group_size && a->size > 0)
-	{
-		if ((a->data[a->top] / group_num) == group_size - i - 1)
-			pb(a, b);
-		else
-			ra(a);
-		i++;
-	}
 }

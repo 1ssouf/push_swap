@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_2.c                                           :+:      :+:    :+:   */
+/*   sort_nbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 20:31:24 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/13 21:47:46 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/15 18:08:48 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,3 +104,22 @@ void	sort_ten(t_stack *a, t_stack *b)
 	push_all_to_a(a, b, chunk_size);
 }
 
+/*
+** vérifie si la pile a est triée de manière décroissante.
+*/
+
+int	is_sorted_descending(t_stack *stack)
+{
+	int	i;
+
+	if (stack->size == 0)
+		return (1);
+	i = stack->top;
+	while (i < stack->size - 1)
+	{
+		if (stack->data[i] < stack->data[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}

@@ -6,7 +6,7 @@
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:07:02 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/13 21:45:51 by ialousse         ###   ########.fr       */
+/*   Updated: 2023/03/13 23:15:25 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 # include <limits.h>
 # include <stdarg.h>
 
-typedef struct s_liste
-{
+typedef struct s_list {
     void            *content;
-    struct s_liste  *next;
-}                   t_liste;
+    struct s_list   *next;
+}                   t_list;
+
 typedef struct	s_stack
 {
     int		*data;
     int		size;
     int		top;
-    t_liste	*instructions;
+    t_list	*instructions;
 }	t_stack;
 
 /********************COMMEND**********************/
@@ -104,5 +104,10 @@ void	exit_failure(char *message);
 void	free_stack(t_stack *stack);
 void	sort_stack(t_stack *a, t_stack *b);
 int		stack_size(t_stack *stack);
-void	print_instructions(t_liste *instructions);
+void	print_instructions(t_list *instructions);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **alst, t_list *new);
+t_stack *parse_stack(int argc, char **argv);
+int     is_valid_number(char *str);
+t_stack *create_stack(int size);
 #endif

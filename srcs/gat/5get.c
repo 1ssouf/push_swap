@@ -1,16 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialousse <ialousse@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 18:04:55 by ialousse          #+#    #+#             */
-/*   Updated: 2023/03/13 21:47:53 by ialousse         ###   ########.fr       */
+/*   Created: 2023/03/13 16:08:05 by ialousse          #+#    #+#             */
+/*   Updated: 2023/03/15 18:14:34 by ialousse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+
+/*
+** Renvoie l'élément suivant à traiter
+*/
+
+int	get_next(t_stack *a, int cur, int dir)
+{
+	int		i;
+	int		next;
+
+	if (dir == 1)
+	{
+		i = a->top;
+		while (i < a->size && a->data[i] < cur)
+			i++;
+		if (i == a->size)
+			next = get_min(a);
+		else
+			next = a->data[i];
+	}
+	else
+	{
+		i = a->size - 1;
+		while (i >= a->top && a->data[i] > cur)
+			i--;
+		if (i < a->top)
+			next = get_max(a);
+		else
+			next = a->data[i];
+	}
+	return (next);
+}
 
 /*
 ** parcourt la pile stack à partir de l'indice stack->top et retourne 
@@ -38,51 +71,4 @@ int	get_max_index(t_stack *stack)
 		i++;
 	}
 	return (max_index);
-}
-
-/*
-** vérifie si la pile a est triée de manière décroissante.
-*/
-
-int	is_sorted_descending(t_stack *stack)
-{
-	int	i;
-
-	if (stack->size == 0)
-		return (1);
-	i = stack->top;
-	while (i < stack->size - 1)
-	{
-		if (stack->data[i] < stack->data[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-
-/*
-** permet de ramener tous les éléments de la pile b sur la pile a
-*/
-void	push_to_a(t_stack *a, t_stack *b)
-{
-	while (b->size > 0)
-	{
-		if (b->top == b->size - 1)
-			pa(a, b);
-		else if (b->top == 0 && b->data[b->top] < b->data[b->top + 1])
-			sb(b);
-		else if (b->data[b->top] > b->data[b->top + 1])
-			rb(b);
-		else
-			pa(a, b);
-	}
-}
-
-/*
-** renvoie 1 si la taille de la pile est égale à 0, sinon 0
-*/
-int	stack_is_empty(t_stack *stack)
-{
-	return (stack->size == 0);
 }
